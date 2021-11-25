@@ -1,0 +1,34 @@
+
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    background-color: rgb(9, 172, 22);
+
+}
+
+.body{
+    background-color: #e0e0e0;
+    padding: 100px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+p{
+    font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5{
+    margin-left: 80px;
+}
+
+h1{
+    font-size: 120px;
+}
