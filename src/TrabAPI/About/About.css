@@ -1,0 +1,14 @@
+h2{
+    color: #FFF;
+    font-size: 3pc;
+    margin:0;
+    padding:0;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: left; */
+    flex-wrap: wrap;
+
+}

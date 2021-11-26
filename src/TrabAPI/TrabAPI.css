@@ -4,12 +4,14 @@
     flex-direction: row;
     justify-content: left;
     background-color: rgb(9, 172, 22);
-
+    /* height: 150px; */
 }
 
 .body{
-    background-color: #e0e0e0;
-    padding: 100px;
+    background-color: rgb(36 40 47);
+    padding-right: 150px;
+    padding-left: 150px;
+    padding-top: 80px;
 }
 
 .container{
@@ -21,14 +23,10 @@ p{
     font-size: 20px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5{
-    margin-left: 80px;
+.header{
+    margin: 80px;
 }
 
 h1{
-    font-size: 120px;
+    font-size: 180px;
 }

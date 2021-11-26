@@ -4,7 +4,9 @@ import About from "./About/About";
 import Characters from "./Characters/Characters";
 import Locations from "./Locations/Locations";
 import Episodes from "./Episodes/Episodes";
-
+// import { Route, BrowserRouter } from "react-router-dom";
+// import { Menu } from "./Menu/Menu";
+// import { Inicio } from "./Inicio";
 import "./TrabAPI.css";
 
 export default class TrabAPI extends React.Component {
@@ -21,17 +23,30 @@ export default class TrabAPI extends React.Component {
     });
   };
 
+//   const Routes = () => {
+//     return (
+//         <BrowserRouter>
+//             <Menu />
+//             <div className="body">
+//                 <Route component={Inicio} exact path="/" />
+//             </div>
+//         </BrowserRouter>
+//     )
+// }
+
   render() {
     const { about } = this.state;
 
     return (
       <div>
         <div className="lista">
-          <h1>The Rick and Morty API</h1>
-          <h4>
-            Trabalho final React Matheus Thibau Paulino e Giulio Dias Machado
-          </h4>
-
+          <div className="header">
+            <h1>The Rick <br/> & Morty API</h1>
+            <h4>
+              Trabalho final React Matheus Thibau Paulino e Giulio Dias Machado
+            </h4>
+          </div>
+         
           <div className="menu">
             <div>
               <Botao name="About" onClick={() => this.aboutClick()} />

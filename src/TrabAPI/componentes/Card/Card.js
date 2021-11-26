@@ -3,9 +3,9 @@ import React from "react";
 import "./Card.css";
 
 export class Card extends React.Component {
+
   render() {
-    const { name, image, status, lastLocation, firstSeen, onClick } =
-      this.props;
+    const { name, image, status, lastLocation, firstSeen, onClick } = this.props;
     return (
       <div>
         <div className="card">
@@ -14,9 +14,10 @@ export class Card extends React.Component {
           </div>
           <div className="cardBody">
             <div className="cardTitle">{name}</div>
-            <div className="status">{status}</div>
+            <div className="status"><ul><li className={status}>{status}</li></ul></div>
             <div className="cardInfo">
-              {lastLocation}
+              Last Location
+              <p>{lastLocation}</p>
               {firstSeen}
             </div>
           </div>
