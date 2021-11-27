@@ -8,9 +8,10 @@ API RICK MORTY
  - Passar menu para router
  - Melhorar CSS
  - Passar CSS para SCSS
- - Fazer paginação
- 
-
+ - Fazer paginação (https://www.npmjs.com/package/react-paginate)
+ - Chamadas de API's para relacionamentos
+ - Fazer abrir item?
+ - Layout de Locations e 
 
 
 

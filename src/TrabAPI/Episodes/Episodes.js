@@ -38,7 +38,7 @@ export default class Episodes extends React.Component {
 
     return (
       <div className="Episodes">
-        <h1>Episodes</h1>
+        <h2>Episodes</h2>
         <input onChange={(e) => this.search(e.target.value)} />
         <ul>
           {episodes.map((item) => (

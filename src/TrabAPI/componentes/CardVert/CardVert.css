@@ -1,0 +1,66 @@
+
+.cardVert{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-right: 30px;
+    width: 750px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(60 62 68);
+    /* flex: 1 1 700px; */
+}
+
+.cardTitle{
+    color: #FFF;
+    font-size: 2em;
+    padding-left: 30px;
+    padding-top: 30px;
+    font-weight: 700;
+}
+
+.status{
+    color: #FFF;
+    font-size: 1.5em;
+    padding-left: 30px;
+}
+
+.cardInfo{
+    color: rgb(182, 182, 182);
+    font-size: 1.5em;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+ul{
+    margin: 0;
+}
+
+p{
+    margin:0
+}
+
+.cardInfo p{
+    font-size: 0.8em;
+    color: #FFF;
+}
+
+.cardImage img{
+    width: 250px;
+}
+
+
+.Unknown::marker{
+    color: grey;
+    font-size: 30px;
+}
+
+.Alive::marker{
+    color: green;
+    font-size: 30px;
+}
+
+.Dead::marker{
+    color: red;
+    font-size: 30px;
+}

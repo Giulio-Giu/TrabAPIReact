@@ -1,5 +1,9 @@
 import React from "react";
 import api from "../services/api";
+import { Card } from "../componentes/Card/Card";
+
+import "./Characters.css";
+
 
 export default class Characters extends React.Component {
   constructor(props) {
@@ -35,50 +39,28 @@ export default class Characters extends React.Component {
 
   render() {
     const { characters } = this.state;
+    let cards = characters.map((item) => (
+      <Card
+        name={item.name}
+        image={item.image}
+        status={item.status}
+        origin={item.origin.name}
+        species={item.species}
+        gender={item.gender}
+        lastLocation={item.location.name}
+        // firstSeen={item.episode[0]}
+        onClick={() => null}
+      />
+    ));
 
     return (
       <div className="Characters">
-        <h1>Characters</h1>
+        <h2>Characters</h2>
         <input onChange={(e) => this.search(e.target.value)} />
-        <ul>
-          {characters.map((item) => (
-            <li key={item.id}>
-              <p>
-                <strong>ID: </strong>
-                {item.id}
-              </p>
-              <p>
-                <strong>Name: </strong>
-                {item.name}
-              </p>
-              <p>
-                <strong>Status: </strong>
-                {item.status}
-              </p>
-              <p>
-                <strong>Specie: </strong>
-                {item.species}
-              </p>
-              <p>
-                <strong>Gender: </strong>
-                {item.gender}
-              </p>
-              <p>
-                <strong>Origin: </strong>
-                {item.origin.name}
-              </p>
-              <p>
-                <strong>Last known location: </strong>
-                {item.location.name}
-              </p>
-              <img src={item.image} alt={item.name} />
-
-              <br />
-              <br />
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+          <div className="cards">
+              {cards}
+          </div>
+       </div>
+    )
   }
 }

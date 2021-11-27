@@ -1,12 +1,3 @@
-
-.menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    background-color: rgb(9, 172, 22);
-    /* height: 150px; */
-}
-
 .body{
     background-color: rgb(36 40 47);
     padding-right: 150px;
@@ -28,5 +19,5 @@ p{
 }
 
 h1{
-    font-size: 180px;
+    font-size: 9em;
 }

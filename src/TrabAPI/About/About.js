@@ -8,22 +8,31 @@ export default class About extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      characters: [],
-      firstSeen: null
+      characters: []
     };
   }
 
   componentDidMount = () => {
     let chars = this.setRandomicCharactersId();
     api.get("character/" + chars).then((response) => {
-      // this.getFirstSeen(response.data.episode[0]).then((i) => {
       this.setState({
-        characters: response.data,
-        // firstSeen: i
+        characters: response.data
       });
-      // })
+
+      
+      response.data.forEach(item => {
+        let callBack = (r) =>{ 
+            item.firstSeen = r;
+            this.setState({
+              characters: response.data
+            });     
+        }
+        this.getFirstSeen(item.episode[0], callBack);
+      });
+
+   
     }).catch((err) => {
-      console.error("ops! Não foi possível carregar os dados da api." + err);
+      console.error("ops! Não foi possível carregar os dados da api." + err)
     });
   }
 
@@ -36,32 +45,45 @@ export default class About extends React.Component {
     return charsIds
   }
 
-  getFirstSeen = (url) => {
+  getFirstSeen = (url, callBack) => {
     url = url.split("https://rickandmortyapi.com/api/")[1];
     api.get(url).then((response) => {
-      return response.data.name
+
+      if(typeof(callBack) == "function"){
+        callBack(response.data.name)
+      }
+      // return response.data.name
     }).catch((err) => {
       console.error("ops! Não foi possível carregar os dados da api." + err);
     });
   }
 
   render() {
-    let firstSeen = this.state.firstSeen;
-    let cards = this.state.characters.map((item, i) => (
+    let cards = this.state.characters.map((item) => (
       <Card
+        id={item.id}
         name={item.name}
         image={item.image}
         status={item.status}
         lastLocation={item.origin.name}
-        firstSeen={firstSeen}
-        // firstSeen={item.episode[0]}
+        firstSeen={item.firstSeen}
         onClick={() => null}
       />
     ));
 
     return (
       <div>
-        <h2>Characters</h2>
+        <div className="aboutInfo">
+          <h2>About</h2>
+          <p>
+            Rick and Morty is an American adult animated science fiction sitcom created by Justin Roiland and Dan Harmon for Cartoon Network's nighttime programming block, Adult Swim. The series follows the misadventures of cynical mad scientist Rick Sanchez and his good-hearted, but fretful grandson Morty Smith, who split their time between domestic life and interdimensional adventures.
+
+            Roiland voices the eponymous characters, with Chris Parnell, Spencer Grammer and Sarah Chalke voicing the rest of Rick and Morty's family. The series originated from an animated short parody film of Back to the Future, created by Roiland for Channel 101, a short film festival co-founded by Harmon. The series has been acclaimed by critics for its originality, creativity and humor.
+
+            The fifth season premiered on June 20, 2021, and consisted of ten episodes. A sixth season was confirmed as part of a long-term deal in May 2018 that ordered 70 new episodes over an unspecified number of seasons.
+          </p>
+        </div>
+        <h2>Crazy Characters</h2>
         <div className="cards">
           {cards}
         </div>

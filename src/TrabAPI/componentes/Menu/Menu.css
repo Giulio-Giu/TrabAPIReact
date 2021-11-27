@@ -1,0 +1,45 @@
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    background-color: rgb(9, 172, 22);
+    /* height: 150px; */
+}
+
+
+.menuItens{
+    display: flex;
+    flex-direction: row;
+}
+
+.menuItens div{
+    font-size: 2em;
+    background-color: rgb(9, 172, 22);
+    color: #FFF;
+    border: 0px solid #FFF;
+    /* margin-left: 50px; */
+    padding: 30px;
+}
+
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+  
+.menuItens div:hover{
+    background-color: rgb(213, 255, 75);
+    color: #000;
+    font-weight: 600;
+    padding: 30px;
+    font-style: italic;
+}
+
+
+.menuItens div:active{
+    background-color: rgb(213, 255, 75);
+    color: #000;
+    font-weight: 600;
+    padding: 30px;
+}
+
+

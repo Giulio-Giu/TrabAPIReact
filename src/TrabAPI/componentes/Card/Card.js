@@ -5,7 +5,7 @@ import "./Card.css";
 export class Card extends React.Component {
 
   render() {
-    const { name, image, status, lastLocation, firstSeen, onClick } = this.props;
+    const { id, name, image, status, origin, species, gender, lastLocation, firstSeen, onClick } = this.props;
     return (
       <div>
         <div className="card">

@@ -38,7 +38,7 @@ export default class Locations extends React.Component {
 
     return (
       <div className="Locations">
-        <h1>Locations</h1>
+        <h2>Locations</h2>
         <input onChange={(e) => this.search(e.target.value)} />
         <ul>
           {locations.map((item) => (
