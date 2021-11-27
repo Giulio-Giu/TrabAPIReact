@@ -37,33 +37,35 @@ export default class Locations extends React.Component {
     const { locations } = this.state;
 
     return (
-      <div className="Locations">
-        <h2>Locations</h2>
-        <input onChange={(e) => this.search(e.target.value)} />
-        <ul>
-          {locations.map((item) => (
-            <li key={item.id}>
-              <p>
-                <strong>ID: </strong>
-                {item.id}
-              </p>
-              <p>
-                <strong>Name: </strong>
-                {item.name}
-              </p>
-              <p>
-                <strong>Type: </strong>
-                {item.type}
-              </p>
-              <p>
-                <strong>Dimension: </strong>
-                {item.dimension}
-              </p>
+      <div className="body">
+        <div className="Locations">
+          <h2>Locations</h2>
+          <input onChange={(e) => this.search(e.target.value)} />
+          <ul>
+            {locations.map((item) => (
+              <li key={item.id}>
+                <p>
+                  <strong>ID: </strong>
+                  {item.id}
+                </p>
+                <p>
+                  <strong>Name: </strong>
+                  {item.name}
+                </p>
+                <p>
+                  <strong>Type: </strong>
+                  {item.type}
+                </p>
+                <p>
+                  <strong>Dimension: </strong>
+                  {item.dimension}
+                </p>
 
-              <br />
-            </li>
-          ))}
-        </ul>
+                <br />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

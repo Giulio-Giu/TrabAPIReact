@@ -37,34 +37,37 @@ export default class Episodes extends React.Component {
     const { episodes } = this.state;
 
     return (
-      <div className="Episodes">
-        <h2>Episodes</h2>
-        <input onChange={(e) => this.search(e.target.value)} />
-        <ul>
-          {episodes.map((item) => (
-            <li key={item.id}>
-              <p>
-                <strong>ID: </strong>
-                {item.id}
-              </p>
-              <p>
-                <strong>Name: </strong>
-                {item.name}
-              </p>
-              <p>
-                <strong>Air Date: </strong>
-                {item.air_date}
-              </p>
-              <p>
-                <strong>Episode: </strong>
-                {item.episode}
-              </p>
+      <div className="body">
+        <div className="Episodes">
+          <h2>Episodes</h2>
+          <input onChange={(e) => this.search(e.target.value)} />
+          <ul>
+            {episodes.map((item) => (
+              <li key={item.id}>
+                <p>
+                  <strong>ID: </strong>
+                  {item.id}
+                </p>
+                <p>
+                  <strong>Name: </strong>
+                  {item.name}
+                </p>
+                <p>
+                  <strong>Air Date: </strong>
+                  {item.air_date}
+                </p>
+                <p>
+                  <strong>Episode: </strong>
+                  {item.episode}
+                </p>
 
-              <br />
-            </li>
-          ))}
-        </ul>
+                <br />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
+
     );
   }
 }

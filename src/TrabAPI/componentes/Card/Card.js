@@ -18,6 +18,8 @@ export class Card extends React.Component {
             <div className="cardInfo">
               Last Location
               <p>{lastLocation}</p>
+                First Seen
+              <p>{firstSeen}</p>
               {firstSeen}
             </div>
           </div>

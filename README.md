@@ -14,11 +14,14 @@ API RICK MORTY
  - Layout de Locations e 
 
 
-
-
 ## AUTORES
 Matheus Thibau Paulino 
 Giulio Dias Machado
+
+
+## PROFESSOR(A)
+Andressa Paulo Castro Machado
+
 
 ## DEPENDENCIAS
 

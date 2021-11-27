@@ -54,13 +54,15 @@ export default class Characters extends React.Component {
     ));
 
     return (
-      <div className="Characters">
-        <h2>Characters</h2>
-        <input onChange={(e) => this.search(e.target.value)} />
+      <div className="body">
+        <div className="Characters">
+          <h2>Characters</h2>
+          <input onChange={(e) => this.search(e.target.value)} />
           <div className="cards">
-              {cards}
+            {cards}
           </div>
-       </div>
+        </div>
+      </div>
     )
   }
 }

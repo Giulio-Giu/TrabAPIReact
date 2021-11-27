@@ -12,16 +12,7 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Menu />
-
-      <div className="lista">
-        <div className="header">
-          <h1>The Rick <br /> & Morty API</h1>
-          <h3>
-            Trabalho final React Matheus Thibau Paulino e Giulio Dias Machado
-          </h3>
-        </div>
-      </div>
-      <div className="body">
+      <div>
         <Route component={About} exact path="/" />
         <Route component={Characters} path="/Characters" />
         <Route component={Episodes} path="/Episodes" />
