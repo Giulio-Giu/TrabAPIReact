@@ -78,9 +78,9 @@ export default class About extends React.Component {
         <div className="lista">
           <div className="header">
             <h1>The Rick <br /> & Morty API</h1>
-            <h3>
+            {/* <h3>
               Trabalho final React Matheus Thibau Paulino e Giulio Dias Machado
-            </h3>
+            </h3> */}
           </div>
         </div>
         <div className="body">
