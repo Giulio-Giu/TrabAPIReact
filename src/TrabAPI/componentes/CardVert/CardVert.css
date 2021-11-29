@@ -1,66 +1,58 @@
 
 .cardVert{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     margin-top: 20px;
     margin-right: 30px;
-    width: 750px;
+    width: 370px;
     border: 1px solid;
     border-radius: 10px;
-    background-color: rgb(60 62 68);
-    /* flex: 1 1 700px; */
+    background-color: rgb(60 62 68);    
 }
 
-.cardTitle{
+.cardVertBody{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    overflow:auto; 
+
+}
+
+h3{
     color: #FFF;
-    font-size: 2em;
-    padding-left: 30px;
-    padding-top: 30px;
-    font-weight: 700;
+    padding: 30px;
 }
 
-.status{
+.cardVertInfos{
     color: #FFF;
-    font-size: 1.5em;
-    padding-left: 30px;
+    padding: 30px;
+    border-top: 1px solid;
 }
 
-.cardInfo{
-    color: rgb(182, 182, 182);
-    font-size: 1.5em;
-    padding-top: 30px;
-    padding-left: 30px;
+.hidden{
+    display: none;
 }
 
-ul{
-    margin: 0;
-}
-
-p{
-    margin:0
-}
-
-.cardInfo p{
-    font-size: 0.8em;
+.residentPhotos{
     color: #FFF;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
 }
 
-.cardImage img{
-    width: 250px;
+.residentPhotos img{
+    width: 50px;
+    padding: 5px;
 }
 
-
-.Unknown::marker{
-    color: grey;
-    font-size: 30px;
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
 }
-
-.Alive::marker{
-    color: green;
-    font-size: 30px;
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
 }
-
-.Dead::marker{
-    color: red;
-    font-size: 30px;
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
 }

@@ -8,11 +8,8 @@ h2{
 .cards{
     display: flex;
     flex-direction: row;
-    /* justify-content: left; */
     flex-wrap: wrap;
-
 }
-
 
 .aboutInfo p{
     font-size: 1.8em;

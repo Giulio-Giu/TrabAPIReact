@@ -1,6 +1,6 @@
 import React from "react";
 import api from "../services/api";
-import { Collapse } from "../componentes/Collapse/Collapse";
+import { CardVert } from "../componentes/CardVert/CardVert";
 
 import "./Locations.css";
 
@@ -10,6 +10,7 @@ export default class Locations extends React.Component {
     this.state = {
       originalLocations: [],
       locations: [],
+      loaded: false
     };
   }
 
@@ -30,6 +31,10 @@ export default class Locations extends React.Component {
           }
 
           this.getResidentsImages(item.residents, callBack);
+        });
+
+        this.setState({
+          loaded: true
         });
       });
   }
@@ -77,10 +82,10 @@ export default class Locations extends React.Component {
   }
 
   render = () => {
-    const { locations } = this.state;
+    const { locations, loaded } = this.state;
 
-    let collapses = locations.map((item) => (
-      <Collapse id={item.id}
+    let cards = locations.map((item) => (
+      <CardVert id={item.id}
         name={item.name}
         type={item.type}
         dimension={item.dimension}
@@ -89,13 +94,14 @@ export default class Locations extends React.Component {
     ));
 
     return (
-      <div className="body">
+      loaded ? <div className="body">
         <h2>Locations</h2>
 
         <div className="locations">
-          {collapses}
+          {cards}
         </div>
       </div>
+      : <div className="loader"></div>
     );
   }
 }
