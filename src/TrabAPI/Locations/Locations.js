@@ -1,5 +1,8 @@
 import React from "react";
 import api from "../services/api";
+import { Collapse } from "../componentes/Collapse/Collapse";
+
+import "./Locations.css";
 
 export default class Locations extends React.Component {
   constructor(props) {
@@ -10,17 +13,57 @@ export default class Locations extends React.Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     api
       .get("/location")
-      .then((response) => this.setLocations(response.data.results));
+      .then((response) => {
+        this.setLocations(response.data.results)
+
+        response.data.results.forEach(item => {
+          //Calback para setar valor de characters e aguardar retorno da api
+          let callBack = (r) => {
+
+            let residents = this.setArrayResidentImages(r)
+
+            item.residents = residents;
+            this.setLocations(response.data.results)
+          }
+
+          this.getResidentsImages(item.residents, callBack);
+        });
+      });
   }
 
-  setLocations(data) {
+  setLocations = (data) => {
     this.setState({
       originalLocations: data,
       locations: data,
     });
+  }
+
+  getResidentsImages = (residents, callBack) => {
+
+    let url = "/character/";
+
+    residents.forEach(item => {
+      url += item.split("https://rickandmortyapi.com/api/character/")[1] + ", ";
+    });
+
+    api.get(url).then((response) => {
+
+      if (typeof (callBack) == "function") {
+        callBack(response.data)
+      }
+      // return response.data.name
+    }).catch((err) => {
+      console.error("ops! Não foi possível carregar os dados da api." + err);
+    });
+  }
+
+  setArrayResidentImages = (residents) => {
+    return residents.map(function (a) {
+      return a.image
+    })
   }
 
   search(text) {
@@ -33,38 +76,24 @@ export default class Locations extends React.Component {
     });
   }
 
-  render() {
+  render = () => {
     const { locations } = this.state;
+
+    let collapses = locations.map((item) => (
+      <Collapse id={item.id}
+        name={item.name}
+        type={item.type}
+        dimension={item.dimension}
+        residents={item.residents}
+        onClick={() => null} />
+    ));
 
     return (
       <div className="body">
-        <div className="Locations">
-          <h2>Locations</h2>
-          <input onChange={(e) => this.search(e.target.value)} />
-          <ul>
-            {locations.map((item) => (
-              <li key={item.id}>
-                <p>
-                  <strong>ID: </strong>
-                  {item.id}
-                </p>
-                <p>
-                  <strong>Name: </strong>
-                  {item.name}
-                </p>
-                <p>
-                  <strong>Type: </strong>
-                  {item.type}
-                </p>
-                <p>
-                  <strong>Dimension: </strong>
-                  {item.dimension}
-                </p>
+        <h2>Locations</h2>
 
-                <br />
-              </li>
-            ))}
-          </ul>
+        <div className="locations">
+          {collapses}
         </div>
       </div>
     );

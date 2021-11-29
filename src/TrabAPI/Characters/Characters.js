@@ -17,7 +17,20 @@ export default class Characters extends React.Component {
   componentDidMount() {
     api
       .get("/character")
-      .then((response) => this.setCharacters(response.data.results));
+      .then((response) => {
+        this.setCharacters(response.data.results)
+
+        response.data.results.forEach(item => {
+          let callBack = (r) => {
+            item.firstSeen = r;
+            this.setState({
+              characters: response.data.results
+            });
+          }
+          this.getFirstSeen(item.episode[0], callBack);
+        });
+  
+      });
   }
 
   setCharacters(data) {
@@ -37,6 +50,20 @@ export default class Characters extends React.Component {
     });
   }
 
+  
+  getFirstSeen = (url, callBack) => {
+    url = url.split("https://rickandmortyapi.com/api/")[1];
+    api.get(url).then((response) => {
+
+      if (typeof (callBack) == "function") {
+        callBack(response.data.name)
+      }
+      // return response.data.name
+    }).catch((err) => {
+      console.error("ops! Não foi possível carregar os dados da api." + err);
+    });
+  }
+
   render() {
     const { characters } = this.state;
     let cards = characters.map((item) => (
@@ -48,7 +75,7 @@ export default class Characters extends React.Component {
         species={item.species}
         gender={item.gender}
         lastLocation={item.location.name}
-        // firstSeen={item.episode[0]}
+        firstSeen={item.firstSeen}
         onClick={() => null}
       />
     ));

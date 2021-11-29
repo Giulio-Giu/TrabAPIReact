@@ -1,0 +1,58 @@
+
+.collapse{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-right: 30px;
+    width: 370px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: rgb(60 62 68);    
+}
+
+.collapseBody{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    overflow:auto; 
+
+}
+
+h3{
+    color: #FFF;
+    padding: 30px;
+}
+
+.collapseInfos{
+    color: #FFF;
+    padding: 30px;
+    border-top: 1px solid;
+}
+
+.hidden{
+    display: none;
+}
+
+.residentPhotos{
+    color: #FFF;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.residentPhotos img{
+    width: 50px;
+    padding: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+}

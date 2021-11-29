@@ -20,7 +20,6 @@ export class Card extends React.Component {
               <p>{lastLocation}</p>
                 First Seen
               <p>{firstSeen}</p>
-              {firstSeen}
             </div>
           </div>
         </div>

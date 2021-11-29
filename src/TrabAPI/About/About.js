@@ -13,6 +13,8 @@ export default class About extends React.Component {
   }
 
   componentDidMount = () => {
+
+    //Carregando Characters
     let chars = this.setRandomicCharactersId();
     api.get("character/" + chars).then((response) => {
       this.setState({
@@ -30,7 +32,7 @@ export default class About extends React.Component {
         this.getFirstSeen(item.episode[0], callBack);
       });
 
-
+      
     }).catch((err) => {
       console.error("ops! Não foi possível carregar os dados da api." + err)
     });

@@ -35,11 +35,10 @@ export default class Episodes extends React.Component {
 
   render() {
     const { episodes } = this.state;
-
     return (
       <div className="body">
         <div className="Episodes">
-          <h2>Episodes</h2>
+          <h2>Episodes</h2>npo
           <input onChange={(e) => this.search(e.target.value)} />
           <ul>
             {episodes.map((item) => (
@@ -60,14 +59,12 @@ export default class Episodes extends React.Component {
                   <strong>Episode: </strong>
                   {item.episode}
                 </p>
-
                 <br />
               </li>
             ))}
           </ul>
         </div>
       </div>
-
     );
   }
 }
