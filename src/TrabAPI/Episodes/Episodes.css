@@ -23,6 +23,8 @@ ul {
 
 .episodeItem {
   border: 2px solid green;
+  border-radius: 6px;
+  padding: 15px;
   background-color: rgb(60 62 68);
   display: inline-flex;
   flex-direction: column;
