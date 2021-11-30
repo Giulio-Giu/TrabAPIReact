@@ -15,6 +15,7 @@ export default class Episodes extends React.Component {
       season05: [],
       currentSeason: props.emptyObject,
       showSeason: false,
+      loaded: false,
     };
   }
 
@@ -32,6 +33,10 @@ export default class Episodes extends React.Component {
       resp2.data.results,
       resp3.data.results
     );
+
+    this.setState({
+      loaded: true,
+    });
   }
 
   fillSeasons(episodes1, episodes2, episodes3) {
@@ -100,7 +105,7 @@ export default class Episodes extends React.Component {
   }
 
   render() {
-    const { currentSeason } = this.state;
+    const { currentSeason, loaded } = this.state;
 
     const buttons = (
       <div style={{ display: "flex" }}>
@@ -129,8 +134,8 @@ export default class Episodes extends React.Component {
     //   </li>
     // ));
 
-    let episodesHtml2 = currentSeason.eps.map((item) => (
-      <li key={item.id} className="episodeItem">
+    let episodesCards = currentSeason.eps.map((item) => (
+      <li key={item.id} className="episodeCard">
         <h3>{item.episode}</h3>
         <h3 className="epName">{item.name}</h3>
         <p>
@@ -140,18 +145,20 @@ export default class Episodes extends React.Component {
       </li>
     ));
 
-    return (
+    return loaded ? (
       <div className="body">
         <div className="Episodes">
           {buttons}
           {this.state.showSeason && (
             <ul>
               <h2 className="titleEpisodes">Episodes</h2>
-              {episodesHtml2}
+              {episodesCards}
             </ul>
           )}
         </div>
       </div>
+    ) : (
+      <div className="loader"></div>
     );
   }
 }
