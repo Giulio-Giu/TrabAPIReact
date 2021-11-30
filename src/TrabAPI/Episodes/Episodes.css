@@ -17,10 +17,6 @@ li {
   margin-bottom: 20px;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .episodeCard {
   border: 2px solid green;
   border-radius: 6px;

@@ -1,66 +1,64 @@
-
-.card{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    margin-right: 30px;
-    width: 750px;
-    border: 1px solid;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: rgb(60 62 68);
-    
+.card {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-right: 30px;
+  width: 750px;
+  border: 1px solid;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: rgb(60 62 68);
 }
-.cardTitle{
-    color: #FFF;
-    font-size: 2em;
-    padding-left: 30px;
-    padding-top: 30px;
-    font-weight: 700;
+.cardTitle {
+  color: #fff;
+  font-size: 2em;
+  padding-left: 30px;
+  padding-top: 30px;
+  font-weight: 700;
 }
 
-.status{
-    color: #FFF;
-    font-size: 1.5em;
-    padding-left: 30px;
+.status {
+  color: #fff;
+  font-size: 1.5em;
+  padding-left: 30px;
 }
 
-.cardInfo{
-    color: rgb(182, 182, 182);
-    font-size: 1.5em;
-    padding-top: 30px;
-    padding-left: 30px;
+.cardInfo {
+  color: rgb(182, 182, 182);
+  font-size: 1.5em;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
-ul{
-    margin: 0;
+ul {
+  margin: 0;
 }
 
-p{
-    margin:0
+p {
+  margin: 0;
 }
 
-.cardInfo p{
-    font-size: 0.8em;
-    color: #FFF;
+.cardInfo p {
+  font-size: 0.8em;
+  color: #fff;
 }
 
-.cardImage img{
-    width: 100%;
-    height: 100%;
+.cardImage img {
+  width: 100%;
+  height: 100%;
 }
 
-.Unknown::marker{
-    color: grey;
-    font-size: 30px;
+.Unknown::marker {
+  color: grey;
+  font-size: 30px;
 }
 
-.Alive::marker{
-    color: green;
-    font-size: 30px;
+.Alive::marker {
+  color: green;
+  font-size: 30px;
 }
 
-.Dead::marker{
-    color: red;
-    font-size: 30px;
+.Dead::marker {
+  color: red;
+  font-size: 30px;
 }
