@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import './Botao.css';
+import "./Botao.css";
 
 export class Botao extends React.Component {
-    render() {
-        const { name, onClick } = this.props;
-        return (
-            <div>
-               <button onClick={()=>onClick()}>{name}</button>
-            </div>
-        );
-    }
+  render() {
+    const { onClick, children } = this.props;
+    return (
+      <div>
+        <button onClick={() => onClick()}>{children}</button>
+      </div>
+    );
+  }
 }

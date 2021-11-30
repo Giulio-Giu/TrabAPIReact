@@ -8,6 +8,12 @@ import { Menu } from "./componentes/Menu/Menu";
 
 import "./TrabAPI.css";
 
+//passar um objeto vazio para esperar a chamada da api em Episodes
+const emptyObject = {
+  name: "",
+  eps: [],
+};
+
 const Routes = () => {
   return (
     <BrowserRouter>
@@ -15,10 +21,13 @@ const Routes = () => {
       <div>
         <Route component={About} exact path="/" />
         <Route component={Characters} path="/Characters" />
-        <Route component={Episodes} path="/Episodes" />
+        <Route path="/Episodes">
+          <Episodes emptyObject={emptyObject} />
+        </Route>
         <Route component={Locations} path="/Locations" />
       </div>
     </BrowserRouter>
-  )
-}
+  );
+};
+
 export default Routes;
