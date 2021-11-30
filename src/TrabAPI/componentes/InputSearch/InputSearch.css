@@ -1,26 +1,24 @@
-button{
-    font-size: 2em;
-    padding: 30px;
-    width: 300px;
-    background-color: rgb(9, 172, 22);
-    color: #FFF;
-    border: 0px solid #FFF;
+button {
+  font-size: 2em;
+  padding: 30px;
+  width: 300px;
+  background-color: rgb(9, 172, 22);
+  color: #fff;
+  border: 0px solid #fff;
 }
 
-button:hover{
-    background-color: rgb(213, 255, 75);
-    color: #000;
-    font-weight: 600;
+button:hover {
+  background-color: rgb(213, 255, 75);
+  color: #000;
+  font-weight: 600;
 }
 
-.formInput{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    
+.formInput {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
 }
 
-.inputSearch{
-    font-size: 2em;
+.inputSearch {
+  font-size: 2em;
 }
-

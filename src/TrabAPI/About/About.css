@@ -1,19 +1,19 @@
-h2{
-    color: #FFF;
-    font-size: 3pc;
-    margin:0;
-    padding:0;
+h2 {
+  color: #fff;
+  font-size: 3pc;
+  margin: 0;
+  padding: 0;
 }
 
-.cards{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.aboutInfo p{
-    font-size: 1.8em;
-    color: #FFF;
-    margin-bottom: 150px;
-    padding-top: 30px;
+.aboutInfo p {
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 150px;
+  padding-top: 30px;
 }

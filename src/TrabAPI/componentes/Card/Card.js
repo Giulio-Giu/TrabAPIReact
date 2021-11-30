@@ -4,18 +4,7 @@ import "./Card.css";
 
 export class Card extends React.Component {
   render() {
-    const {
-      id,
-      name,
-      image,
-      status,
-      origin,
-      species,
-      gender,
-      lastLocation,
-      firstSeen,
-      onClick,
-    } = this.props;
+    const { name, image, status, lastLocation, firstSeen } = this.props;
 
     const statusStr = status.toString().toLowerCase();
     console.log(statusStr);
@@ -41,7 +30,6 @@ export class Card extends React.Component {
             </div>
           </div>
         </div>
-        {/* <button onClick={()=>onClick()}>{name}</button> */}
       </div>
     );
   }

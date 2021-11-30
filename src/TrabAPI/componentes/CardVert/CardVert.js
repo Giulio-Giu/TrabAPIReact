@@ -4,13 +4,13 @@ import "./CardVert.css";
 
 export class CardVert extends React.Component {
   render() {
-    const { id, name, type, dimension, residents, onClick } = this.props;
-    
-    let residentsHTML = ""
-    
-    residents.forEach(element => {
-      residentsHTML += `<img src="${element}" alt=${element} className="thumbnail"/>`
-    })
+    const { name, type, dimension, residents } = this.props;
+
+    let residentsHTML = "";
+
+    residents.forEach((element) => {
+      residentsHTML += `<img src="${element}" alt=${element} className="thumbnail"/>`;
+    });
 
     return (
       <div>
@@ -29,7 +29,6 @@ export class CardVert extends React.Component {
             </div>
           </div>
         </div>
-        {/* <button onClick={()=>onClick()}>{name}</button> */}
       </div>
     );
   }

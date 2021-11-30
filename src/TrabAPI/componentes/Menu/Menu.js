@@ -10,17 +10,25 @@ export class Menu extends React.Component {
         <div className="menu">
           <div>
             <div className="menuItens">
-              <div >
-                <NavLink exact to="/" activeClassName="active">About</NavLink>
+              <div>
+                <NavLink exact to="/" activeClassName="active">
+                  About
+                </NavLink>
               </div>
               <div>
-                <NavLink to="/Characters" activeClassName="active">Characters</NavLink>
+                <NavLink to="/Characters" activeClassName="active">
+                  Characters
+                </NavLink>
               </div>
               <div>
-                <NavLink to="/Episodes" activeClassName="active">Episodes</NavLink>
+                <NavLink to="/Episodes" activeClassName="active">
+                  Episodes
+                </NavLink>
               </div>
               <div>
-                <NavLink to="/Locations" activeClassName="active">Locations</NavLink>
+                <NavLink to="/Locations" activeClassName="active">
+                  Locations
+                </NavLink>
               </div>
             </div>
           </div>

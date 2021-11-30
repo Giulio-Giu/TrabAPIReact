@@ -1,44 +1,44 @@
-.menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    background-color: rgb(9, 172, 22);
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  background-color: rgb(9, 172, 22);
 }
 
-.menuItens{
-    display: flex;
-    flex-direction: row;
+.menuItens {
+  display: flex;
+  flex-direction: row;
 }
 
-.menuItens div{
-    font-size: 2em;
-    background-color: rgb(9, 172, 22);
-    color: #FFF;
-    border: 0px solid #FFF;
-    padding: 30px;
+.menuItens div {
+  font-size: 2em;
+  background-color: rgb(9, 172, 22);
+  color: #fff;
+  border: 0px solid #fff;
+  padding: 30px;
 }
 
-a{
-    color: inherit;
-    text-decoration: inherit;
-}
-  
-.menuItens div:hover{
-    background-color: rgb(213, 255, 75);
-    color: #000;
-    font-weight: 600;
-    padding: 30px;
-    font-style: italic;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 
-.menuItens div:focus{
-    background-color: rgb(213, 255, 75);
-    color: #000;
-    font-weight: 600;
-    padding: 30px;
+.menuItens div:hover {
+  background-color: rgb(213, 255, 75);
+  color: #000;
+  font-weight: 600;
+  padding: 30px;
+  font-style: italic;
 }
 
-.active{
-    color: #000;
-    font-weight: 600;
+.menuItens div:focus {
+  background-color: rgb(213, 255, 75);
+  color: #000;
+  font-weight: 600;
+  padding: 30px;
+}
+
+.active {
+  color: #000;
+  font-weight: 600;
 }
