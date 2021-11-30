@@ -16,7 +16,7 @@ export class CardVert extends React.Component {
       <div>
         <div className="cardVert">
           <div className="cardVertTitle">
-            <h3>{name}</h3>
+            <h3 className="cardVertH3">{name}</h3>
           </div>
           <div className="cardVertBody">
             <div className="cardVertInfos">

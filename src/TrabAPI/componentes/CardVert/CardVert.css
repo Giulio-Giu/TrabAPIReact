@@ -16,7 +16,8 @@
   overflow: auto;
 }
 
-h3 {
+h3,
+.cardVertH3 {
   color: #fff;
   padding: 30px;
 }
