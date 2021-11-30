@@ -7,6 +7,8 @@ import "./Characters.css";
 
 
 export default class Characters extends React.Component {
+
+  //Metodo construtor
   constructor(props) {
     super(props);
     this.state = {
@@ -16,19 +18,24 @@ export default class Characters extends React.Component {
     };
   }
 
+  //Responsável pelo carregamento dos dados da API 
   componentDidMount() {
     api
       .get("/character")
       .then((response) => {
         this.setCharacters(response.data.results)
 
+        //Após carregar os personagens busco o primeiro episodio para personagem
         response.data.results.forEach(item => {
+          
+          //Função callback definida pega resultado da API e seta no objeto do personagem
           let callBack = (r) => {
             item.firstSeen = r;
             this.setState({
               characters: response.data.results
             });
           }
+          //Carrega episódios do personagem 
           this.getFirstSeen(item.episode[0], callBack);
         });
 
@@ -46,6 +53,7 @@ export default class Characters extends React.Component {
     });
   }
 
+  //Pesquisa de personagem por nome
   search(text) {
     const { originalCharacters } = this.state;
     const filteredData = originalCharacters.filter((character) =>
@@ -57,8 +65,9 @@ export default class Characters extends React.Component {
   }
 
 
+  //API para buscar episódios do personagem 
   getFirstSeen = (url, callBack) => {
-    url = url.split("https://rickandmortyapi.com/api/")[1];
+    url = url.split("https://rickandmortyapi.com/api/")[1]; //Split para pegar rota correta e remover prefixo já definido previamente
     api.get(url).then((response) => {
 
       if (typeof (callBack) == "function") {
@@ -72,6 +81,8 @@ export default class Characters extends React.Component {
 
   render() {
     const { characters, loaded } = this.state;
+    
+    //Percorre personagems para montar cards para cada personagem
     let cards = characters.map((item) => (
       <Card
         name={item.name}
@@ -87,6 +98,7 @@ export default class Characters extends React.Component {
     ));
 
     return (
+         //verifica se está em carregamento para exibir loading ou conteúdo
          loaded ? <div>
           <div className="body">
             <div>
