@@ -3,14 +3,13 @@ h2{
     font-size: 3pc;
     margin:0;
     padding:0;
+    margin-bottom: 20px;
 }
 
 .cards{
     display: flex;
     flex-direction: row;
-    /* justify-content: left; */
     flex-wrap: wrap;
-
 }
 
 .aboutInfo p{
@@ -23,3 +22,5 @@ h2{
 p{
     padding-bottom: 20px;
 }
+
+

@@ -1,6 +1,7 @@
 import React from "react";
 import api from "../services/api";
 import { Card } from "../componentes/Card/Card";
+import { InputSearch } from "../componentes/InputSearch/InputSearch";
 
 import "./Characters.css";
 
@@ -11,6 +12,7 @@ export default class Characters extends React.Component {
     this.state = {
       originalCharacters: [],
       characters: [],
+      loaded: false,
     };
   }
 
@@ -29,7 +31,11 @@ export default class Characters extends React.Component {
           }
           this.getFirstSeen(item.episode[0], callBack);
         });
-  
+
+        this.setState({
+          loaded: true
+        })
+
       });
   }
 
@@ -50,7 +56,7 @@ export default class Characters extends React.Component {
     });
   }
 
-  
+
   getFirstSeen = (url, callBack) => {
     url = url.split("https://rickandmortyapi.com/api/")[1];
     api.get(url).then((response) => {
@@ -65,7 +71,7 @@ export default class Characters extends React.Component {
   }
 
   render() {
-    const { characters } = this.state;
+    const { characters, loaded } = this.state;
     let cards = characters.map((item) => (
       <Card
         name={item.name}
@@ -81,15 +87,18 @@ export default class Characters extends React.Component {
     ));
 
     return (
-      <div className="body">
-        <div className="Characters">
-          <h2>Characters</h2>
-          <input onChange={(e) => this.search(e.target.value)} />
-          <div className="cards">
-            {cards}
+         loaded ? <div>
+          <div className="body">
+            <div>
+              <h2>Characters</h2>
+              <InputSearch name="Search by name..." onChange={(e) => this.search(e.target.value)} />
+              <div className="cards">
+                {cards}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+          </div>
+          : <div class="loader"></div>
     )
   }
 }

@@ -3,9 +3,7 @@
     flex-direction: row;
     justify-content: left;
     background-color: rgb(9, 172, 22);
-    /* height: 150px; */
 }
-
 
 .menuItens{
     display: flex;
@@ -17,7 +15,6 @@
     background-color: rgb(9, 172, 22);
     color: #FFF;
     border: 0px solid #FFF;
-    /* margin-left: 50px; */
     padding: 30px;
 }
 
@@ -34,12 +31,14 @@ a{
     font-style: italic;
 }
 
-
-.menuItens div:active{
+.menuItens div:focus{
     background-color: rgb(213, 255, 75);
     color: #000;
     font-weight: 600;
     padding: 30px;
 }
 
-
+.active{
+    color: #000;
+    font-weight: 600;
+}

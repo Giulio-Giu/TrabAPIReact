@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "./Menu.css";
 
@@ -11,16 +11,16 @@ export class Menu extends React.Component {
           <div>
             <div className="menuItens">
               <div >
-                <Link to="/">About</Link>
+                <NavLink exact to="/" activeClassName="active">About</NavLink>
               </div>
               <div>
-                <Link to="/Characters">Characters</Link>
+                <NavLink to="/Characters" activeClassName="active">Characters</NavLink>
               </div>
               <div>
-                <Link to="/Episodes">Episodes</Link>
+                <NavLink to="/Episodes" activeClassName="active">Episodes</NavLink>
               </div>
               <div>
-                <Link to="/Locations">Locations</Link>
+                <NavLink to="/Locations" activeClassName="active">Locations</NavLink>
               </div>
             </div>
           </div>

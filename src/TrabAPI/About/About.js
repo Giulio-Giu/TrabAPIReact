@@ -69,7 +69,7 @@ export default class About extends React.Component {
         status={item.status}
         lastLocation={item.origin.name}
         firstSeen={item.firstSeen}
-        onClick={() => null}
+        // onClick={() => null}
       />
     ));
 
