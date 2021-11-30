@@ -15,14 +15,15 @@ export default class About extends React.Component {
   componentDidMount = () => {
 
     //Carregando Characters
-    let chars = this.setRandomicCharactersId();
-    api.get("character/" + chars).then((response) => {
+    let chars = this.setRandomicCharactersId();//Gera IDS aleatórios
+    api.get("character/" + chars).then((response) => { //API para buscar personagens dos IDS gerados aleatóriamente
       this.setState({
         characters: response.data
       });
 
 
       response.data.forEach(item => {
+        //Funcao callback para setar objeto(episódio) retornado pela API para personagem 
         let callBack = (r) => {
           item.firstSeen = r;
           this.setState({
@@ -40,19 +41,20 @@ export default class About extends React.Component {
 
   setRandomicCharactersId = () => {
     let charsIds = "";
-    //Retorna 4 IDS aleatorios de 0 a 100
+    //Retorna 4 IDS aleatorios de 1 a 801
     for (let i = 0; i < 4; i++) {
       charsIds += (Math.floor(Math.random() * 800) + 1) + ",";
     }
     return charsIds
   }
 
+  //API de Busca de episódios do personagem
   getFirstSeen = (url, callBack) => {
     url = url.split("https://rickandmortyapi.com/api/")[1];
     api.get(url).then((response) => {
 
       if (typeof (callBack) == "function") {
-        callBack(response.data.name)
+        callBack(response.data.name) //Callback para setar valores retornados da API
       }
       // return response.data.name
     }).catch((err) => {
@@ -61,6 +63,7 @@ export default class About extends React.Component {
   }
 
   render() {
+    //Monta cards dos personagens aletórios
     let cards = this.state.characters.map((item) => (
       <Card
         id={item.id}
